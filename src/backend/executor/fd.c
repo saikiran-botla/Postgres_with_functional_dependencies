@@ -1,23 +1,24 @@
 #include "postgres.h"
 #include "executor/fd.h"
 
-struct fd_list* fd_info_list=NULL;
+struct fd_list fd_info_list[10];
+int i=0;
 struct fd_list* end=NULL;
 bool special_insert_into_fd_list=false;
-void init_fd_list_hard_code(){
-	//hard-coding the values for testing purposes:: should not be used in final level::
-	struct fd_struct* hc=malloc(sizeof(struct fd_struct));
-	strcpy(hc->table_name,"delta_v5");
-	hc->no_l_cols=1;
-	hc->no_r_cols=1;
-	hc->l_cols=malloc(hc->no_l_cols*sizeof(int));
-	hc->r_cols=malloc(hc->no_r_cols*sizeof(int));
-    hc->l_cols[0]=1;
-    hc->r_cols[0]=2;
-	fd_info_list=malloc(sizeof(struct fd_list));
-	fd_info_list->next=NULL;
-	fd_info_list->fd_info=hc;
-}
+// void init_fd_list_hard_code(){
+// 	//hard-coding the values for testing purposes:: should not be used in final level::
+// 	struct fd_struct* hc=malloc(sizeof(struct fd_struct));
+// 	strcpy(hc->table_name,"delta_v5");
+// 	hc->no_l_cols=1;
+// 	hc->no_r_cols=1;
+// 	hc->l_cols=malloc(hc->no_l_cols*sizeof(int));
+// 	hc->r_cols=malloc(hc->no_r_cols*sizeof(int));
+//     hc->l_cols[0]=1;
+//     hc->r_cols[0]=2;
+// 	fd_info_list=malloc(sizeof(struct fd_list));
+// 	fd_info_list->next=NULL;
+// 	fd_info_list->fd_info=hc;
+// }
 
 bool bool_to_check_fun_dep(struct fd_struct* curr,struct BITMAP* bitmap_obj,int16 *attr_nums,int num_attrs,char name[50]){
 
@@ -93,34 +94,32 @@ struct BITMAP* init_bitmap(int16 *attr_nums,int num_attrs){
 //     return 1;
 // }
 
-bool insert_in_fd_list(struct fd_struct * newfd){
+bool insert_in_fd_list(struct fd_struct newfd){
 
-	struct fd_list *newfdlist=malloc(sizeof(struct fd_list));
+	//struct fd_list *newfdlist=malloc(sizeof(struct fd_list));
 
-	newfdlist->fd_info=newfd;
-	newfdlist->next=NULL;
-	if(end==NULL){
-		fd_info_list=newfdlist;
+	
+	fd_info_list[i].fd_info=newfd;
+	fd_info_list[i].next=NULL;
+	if(i>0){
+		fd_info_list[i-1].next=&fd_info_list[i];
 	}
-	else{
-		end->next=newfdlist;
-	}
-	end=newfdlist;
+	i++;
 	
 	return true;
 }
-void free_fun_dep_table(){
-	//freeing all the memory generagted:
-	struct fd_list* curr=fd_info_list;
-	while(curr!=NULL){
-		//allocated using palloc::
-		//pfree(curr->fd_info);
-		curr=curr->next;
-		free(fd_info_list);
-		fd_info_list=curr;
-	}
+// void free_fun_dep_table(){
+// 	//freeing all the memory generagted:
+// 	struct fd_list* curr=fd_info_list;
+// 	while(curr!=NULL){
+// 		//allocated using palloc::
+// 		//pfree(curr->fd_info);
+// 		curr=curr->next;
+// 		pfree(fd_info_list);
+// 		fd_info_list=curr;
+// 	}
 	
-}
+// }
 
 
 

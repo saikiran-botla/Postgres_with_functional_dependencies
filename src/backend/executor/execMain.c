@@ -1592,7 +1592,7 @@ ExecCloseRangeTableRelations(EState *estate)
  * ----------------------------------------------------------------
  */
 
-#include "executor/fd.h";
+#include "executor/fd.h"
 // set_fd_list(fd_info_list);
 
 static void
@@ -1671,10 +1671,10 @@ ExecutePlan(EState *estate,
 		Datum temp_val=slot_getattr(slot,1,&is_att_null);
 		struct name *tbl=(struct name *)DatumGetPointer(temp_val);
 		
-		struct fd_struct *newfd=palloc(sizeof(struct fd_struct));
+		struct fd_struct newfd;
 		temp_val=slot_getattr(slot,2,&is_att_null);
 		int no_l_cols=(int)temp_val;
-		int *l_cols=palloc(sizeof(int)*no_l_cols);
+		int l_cols[10];
 
 		for(int i=0;i<no_l_cols;i++){
 			temp_val=slot_getattr(slot,i+3,&is_att_null);
@@ -1684,18 +1684,22 @@ ExecutePlan(EState *estate,
 		temp_val=slot_getattr(slot,13,&is_att_null);
 		int no_r_cols=(int)temp_val;
 		
-		int *r_cols=palloc(sizeof(int)*no_r_cols);
+		int r_cols[10];
 
 		for(int i=0;i<no_r_cols;i++){
 			temp_val=slot_getattr(slot,i+14,&is_att_null);
 			r_cols[i]=(int)temp_val;
 		}
 
-		strcpy(newfd->table_name,&tbl->table_name[1]);
-		newfd->no_l_cols=no_l_cols;
-		newfd->no_r_cols=no_r_cols;
-		newfd->l_cols=l_cols;
-		newfd->r_cols=r_cols;
+		strcpy(newfd.table_name,&tbl->table_name[1]);
+		newfd.no_l_cols=no_l_cols;
+		newfd.no_r_cols=no_r_cols;
+		for(int i=0;i<no_l_cols;i++){
+			newfd.l_cols[i]=l_cols[i];
+		}
+		for(int i=0;i<no_r_cols;i++){
+			newfd.r_cols[i]=r_cols[i];
+		}
 
 		// struct fd_struct newfd;
 		// Datum temp_val=slot_getattr(slot,1,is_att_null);

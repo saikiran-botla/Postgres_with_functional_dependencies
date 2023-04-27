@@ -486,10 +486,10 @@ ExecInsertIndexTuples(ResultRelInfo *resultRelInfo,
 			struct BITMAP* btmap_attr=init_bitmap(indexInfo->ii_IndexAttrNumbers,indexInfo->ii_NumIndexAttrs);
 			while(curr_itm!=NULL){
 				
-				bool test_index=bool_to_check_fun_dep(curr_itm->fd_info,btmap_attr,indexInfo->ii_IndexAttrNumbers,indexInfo->ii_NumIndexAttrs,name);
+				bool test_index=bool_to_check_fun_dep(&curr_itm->fd_info,btmap_attr,indexInfo->ii_IndexAttrNumbers,indexInfo->ii_NumIndexAttrs,name);
 				if(test_index){
 					EState dup_estate=*estate;
-					bool val=check_fun_dep_constraint(curr_itm->fd_info,heapRelation,
+					bool val=check_fun_dep_constraint(&curr_itm->fd_info,heapRelation,
 													 indexRelation, indexInfo,
 													 tupleid, values, isnull,
 													 estate, false,

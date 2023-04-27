@@ -4637,16 +4637,16 @@ PostgresMain(const char *dbname, const char *username)
 					int count_left=0;
 					int left[10];
 
-					char *catquery;
-					catquery=malloc(400);
+					char catquery[400];
+					//catquery=malloc(400);
 					catquery[0]='\0';
                     
-					char* new_buf=malloc(2*sizeof(query_string));
+					char new_buf[400];
 					new_buf[0]='\0';
 					
 					if(strncmp(query_string,"INSERT FUN_DEP",14)==0){
-						char *buf;
-						buf=malloc(200);
+						char buf[200];
+						//buf=malloc(200);
 						buf[0]='\0';
 
 						strcat(buf,query_string);
@@ -4720,13 +4720,13 @@ PostgresMain(const char *dbname, const char *username)
 						strcat(catquery,");");
 
 						strcat(new_buf,catquery);
-						//free(buf);
+						
 					}
 
 					else if(strncmp(query_string,"INSERT INTO",11)==0){
 						special_insert_into_fd_list=true;
-						char *buf;
-						buf=malloc(200);
+						char buf[200];
+						//buf=malloc(200);
 						buf[0]='\0';
 
 						strcat(buf,query_string);
@@ -4750,13 +4750,13 @@ PostgresMain(const char *dbname, const char *username)
 
 						strcat(new_buf,catquery);
 						strcat(new_buf,query_string);
-						//free(buf);
+						
 					}
 					else{
 						strcat(new_buf,query_string);
 					}
 					//strcat(query_string,catquery);
-
+					
 
 					if (am_walsender)
 					{
@@ -4771,7 +4771,9 @@ PostgresMain(const char *dbname, const char *username)
 					send_ready_for_query = true;
 					special_insert_into_fd_list=false;
 
-					free(new_buf);
+					
+					
+
 					//freeing all the memory created::
 					//using malloc for now:: can convert to palloc::
 					//free_fun_dep_table();

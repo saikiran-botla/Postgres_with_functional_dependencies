@@ -4,18 +4,18 @@ struct fd_struct{
 	char table_name[50];
 	int no_l_cols;
 	int no_r_cols;
-	int *l_cols;
-	int *r_cols;
+	int l_cols[10];
+	int r_cols[10];
 };
 
 struct fd_list{
-	struct fd_struct *fd_info;
+	struct fd_struct fd_info;
 	struct fd_list *next;
 };
 
-extern struct fd_list *fd_info_list;
+extern struct fd_list fd_info_list[10];
 extern struct fd_list *end;
-
+extern int i;
 extern void init_fd_list_hard_code();
 struct BITMAP{
 	char* bitmap;
@@ -39,7 +39,7 @@ struct name{
 //     return 1;
 // }
 extern int find_att_num(int16 *attr_nums,int num_attr,int val);
-extern bool insert_in_fd_list(struct fd_struct * newfd);
+extern bool insert_in_fd_list(struct fd_struct newfd);
 
 extern bool special_insert_into_fd_list;
 #endif

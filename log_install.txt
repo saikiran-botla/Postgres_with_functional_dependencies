@@ -20,15 +20,15 @@ make -C src install
 make[1]: Entering directory '/home/saikiran/Postgresql/postgresql/src'
 make -C common install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib'
-/usr/bin/install -c -m 644  libpgcommon.a '/home/saikiran/Postgresql/install/lib/libpgcommon.a'
-/usr/bin/install -c -m 644  libpgcommon_shlib.a '/home/saikiran/Postgresql/install/lib/libpgcommon_shlib.a'
+/usr/bin/mkdir -p '/lib'
+/usr/bin/install -c -m 644  libpgcommon.a '/lib/libpgcommon.a'
+/usr/bin/install -c -m 644  libpgcommon_shlib.a '/lib/libpgcommon_shlib.a'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
 make -C port install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/port'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib'
-/usr/bin/install -c -m 644  libpgport.a '/home/saikiran/Postgresql/install/lib/libpgport.a'
-/usr/bin/install -c -m 644  libpgport_shlib.a '/home/saikiran/Postgresql/install/lib/libpgport_shlib.a'
+/usr/bin/mkdir -p '/lib'
+/usr/bin/install -c -m 644  libpgport.a '/lib/libpgport.a'
+/usr/bin/install -c -m 644  libpgport_shlib.a '/lib/libpgport_shlib.a'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/port'
 make -C timezone install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/timezone'
@@ -40,13 +40,13 @@ make -C ../../src/common all
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[3]: Nothing to be done for 'all'.
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql'
-./zic -d '/home/saikiran/Postgresql/install/share/postgresql/timezone'  ./data/tzdata.zi
+/usr/bin/mkdir -p '/share/postgresql'
+./zic -d '/share/postgresql/timezone'  ./data/tzdata.zi
 make -C tznames install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/timezone/tznames'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
-/usr/bin/install -c -m 644 ./Africa.txt ./America.txt ./Antarctica.txt ./Asia.txt ./Atlantic.txt ./Australia.txt ./Etc.txt ./Europe.txt ./Indian.txt ./Pacific.txt '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
-/usr/bin/install -c -m 644 ./Default ./Australia ./India '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
+/usr/bin/mkdir -p '/share/postgresql/timezonesets'
+/usr/bin/install -c -m 644 ./Africa.txt ./America.txt ./Antarctica.txt ./Asia.txt ./Atlantic.txt ./Australia.txt ./Etc.txt ./Europe.txt ./Indian.txt ./Pacific.txt '/share/postgresql/timezonesets'
+/usr/bin/install -c -m 644 ./Default ./Australia ./India '/share/postgresql/timezonesets'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/timezone/tznames'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/timezone'
 make -C backend install
@@ -343,8 +343,8 @@ make -C jit all
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/jit'
 make[3]: Nothing to be done for 'all'.
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/jit'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin' '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c  postgres '/home/saikiran/Postgresql/install/bin/postgres'
+/usr/bin/mkdir -p '/bin' '/share/postgresql'
+/usr/bin/install -c  postgres '/bin/postgres'
 make -C access install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/access'
 make -C brin install
@@ -614,13 +614,13 @@ make -C ../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql'
-./zic -d '/home/saikiran/Postgresql/install/share/postgresql/timezone'  ./data/tzdata.zi
+/usr/bin/mkdir -p '/share/postgresql'
+./zic -d '/share/postgresql/timezone'  ./data/tzdata.zi
 make -C tznames install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/timezone/tznames'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
-/usr/bin/install -c -m 644 ./Africa.txt ./America.txt ./Antarctica.txt ./Asia.txt ./Atlantic.txt ./Australia.txt ./Etc.txt ./Europe.txt ./Indian.txt ./Pacific.txt '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
-/usr/bin/install -c -m 644 ./Default ./Australia ./India '/home/saikiran/Postgresql/install/share/postgresql/timezonesets'
+/usr/bin/mkdir -p '/share/postgresql/timezonesets'
+/usr/bin/install -c -m 644 ./Africa.txt ./America.txt ./Antarctica.txt ./Asia.txt ./Atlantic.txt ./Australia.txt ./Etc.txt ./Europe.txt ./Indian.txt ./Pacific.txt '/share/postgresql/timezonesets'
+/usr/bin/install -c -m 644 ./Default ./Australia ./India '/share/postgresql/timezonesets'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/timezone/tznames'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/timezone'
 make -C jit install
@@ -629,183 +629,183 @@ make[3]: Nothing to be done for 'install'.
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/jit'
 make -C catalog install-data
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/catalog'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c -m 644 `for f in ./postgres.bki; do test -r $f && echo $f && break; done` '/home/saikiran/Postgresql/install/share/postgresql/postgres.bki'
-/usr/bin/install -c -m 644 `for f in ./system_constraints.sql; do test -r $f && echo $f && break; done` '/home/saikiran/Postgresql/install/share/postgresql/system_constraints.sql'
-/usr/bin/install -c -m 644 ./system_functions.sql '/home/saikiran/Postgresql/install/share/postgresql/system_functions.sql'
-/usr/bin/install -c -m 644 ./system_views.sql '/home/saikiran/Postgresql/install/share/postgresql/system_views.sql'
-/usr/bin/install -c -m 644 ./information_schema.sql '/home/saikiran/Postgresql/install/share/postgresql/information_schema.sql'
-/usr/bin/install -c -m 644 ./sql_features.txt '/home/saikiran/Postgresql/install/share/postgresql/sql_features.txt'
+/usr/bin/mkdir -p '/share/postgresql'
+/usr/bin/install -c -m 644 `for f in ./postgres.bki; do test -r $f && echo $f && break; done` '/share/postgresql/postgres.bki'
+/usr/bin/install -c -m 644 `for f in ./system_constraints.sql; do test -r $f && echo $f && break; done` '/share/postgresql/system_constraints.sql'
+/usr/bin/install -c -m 644 ./system_functions.sql '/share/postgresql/system_functions.sql'
+/usr/bin/install -c -m 644 ./system_views.sql '/share/postgresql/system_views.sql'
+/usr/bin/install -c -m 644 ./information_schema.sql '/share/postgresql/information_schema.sql'
+/usr/bin/install -c -m 644 ./sql_features.txt '/share/postgresql/sql_features.txt'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/catalog'
 make -C tsearch install-data
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/tsearch'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql' '/home/saikiran/Postgresql/install/share/postgresql/tsearch_data'
-/usr/bin/install -c -m 644 ./dicts/synonym_sample.syn ./dicts/thesaurus_sample.ths ./dicts/hunspell_sample.affix ./dicts/ispell_sample.affix ./dicts/ispell_sample.dict ./dicts/hunspell_sample_long.affix ./dicts/hunspell_sample_long.dict ./dicts/hunspell_sample_num.affix ./dicts/hunspell_sample_num.dict '/home/saikiran/Postgresql/install/share/postgresql/tsearch_data/'
+/usr/bin/mkdir -p '/share/postgresql' '/share/postgresql/tsearch_data'
+/usr/bin/install -c -m 644 ./dicts/synonym_sample.syn ./dicts/thesaurus_sample.ths ./dicts/hunspell_sample.affix ./dicts/ispell_sample.affix ./dicts/ispell_sample.dict ./dicts/hunspell_sample_long.affix ./dicts/hunspell_sample_long.dict ./dicts/hunspell_sample_num.affix ./dicts/hunspell_sample_num.dict '/share/postgresql/tsearch_data/'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/tsearch'
 make -C utils install-data
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c -m 644 ./errcodes.txt '/home/saikiran/Postgresql/install/share/postgresql/errcodes.txt'
+/usr/bin/mkdir -p '/share/postgresql'
+/usr/bin/install -c -m 644 ./errcodes.txt '/share/postgresql/errcodes.txt'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils'
-/usr/bin/install -c -m 644 ./libpq/pg_hba.conf.sample '/home/saikiran/Postgresql/install/share/postgresql/pg_hba.conf.sample'
-/usr/bin/install -c -m 644 ./libpq/pg_ident.conf.sample '/home/saikiran/Postgresql/install/share/postgresql/pg_ident.conf.sample'
-/usr/bin/install -c -m 644 ./utils/misc/postgresql.conf.sample '/home/saikiran/Postgresql/install/share/postgresql/postgresql.conf.sample'
+/usr/bin/install -c -m 644 ./libpq/pg_hba.conf.sample '/share/postgresql/pg_hba.conf.sample'
+/usr/bin/install -c -m 644 ./libpq/pg_ident.conf.sample '/share/postgresql/pg_ident.conf.sample'
+/usr/bin/install -c -m 644 ./utils/misc/postgresql.conf.sample '/share/postgresql/postgresql.conf.sample'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend'
 make -C backend/utils/mb/conversion_procs install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs'
 make -C cyrillic_and_mic install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  cyrillic_and_mic.so '/home/saikiran/Postgresql/install/lib/postgresql/cyrillic_and_mic.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  cyrillic_and_mic.so '/lib/postgresql/cyrillic_and_mic.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/cyrillic_and_mic'
 make -C euc_cn_and_mic install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  euc_cn_and_mic.so '/home/saikiran/Postgresql/install/lib/postgresql/euc_cn_and_mic.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  euc_cn_and_mic.so '/lib/postgresql/euc_cn_and_mic.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_cn_and_mic'
 make -C euc_jp_and_sjis install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  euc_jp_and_sjis.so '/home/saikiran/Postgresql/install/lib/postgresql/euc_jp_and_sjis.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  euc_jp_and_sjis.so '/lib/postgresql/euc_jp_and_sjis.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_jp_and_sjis'
 make -C euc_kr_and_mic install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  euc_kr_and_mic.so '/home/saikiran/Postgresql/install/lib/postgresql/euc_kr_and_mic.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  euc_kr_and_mic.so '/lib/postgresql/euc_kr_and_mic.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_kr_and_mic'
 make -C euc_tw_and_big5 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  euc_tw_and_big5.so '/home/saikiran/Postgresql/install/lib/postgresql/euc_tw_and_big5.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  euc_tw_and_big5.so '/lib/postgresql/euc_tw_and_big5.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc_tw_and_big5'
 make -C latin2_and_win1250 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  latin2_and_win1250.so '/home/saikiran/Postgresql/install/lib/postgresql/latin2_and_win1250.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  latin2_and_win1250.so '/lib/postgresql/latin2_and_win1250.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/latin2_and_win1250'
 make -C latin_and_mic install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/latin_and_mic'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  latin_and_mic.so '/home/saikiran/Postgresql/install/lib/postgresql/latin_and_mic.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  latin_and_mic.so '/lib/postgresql/latin_and_mic.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/latin_and_mic'
 make -C utf8_and_big5 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_big5'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_big5.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_big5.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_big5.so '/lib/postgresql/utf8_and_big5.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_big5'
 make -C utf8_and_cyrillic install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_cyrillic.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_cyrillic.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_cyrillic.so '/lib/postgresql/utf8_and_cyrillic.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_cyrillic'
 make -C utf8_and_euc_cn install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_euc_cn.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_euc_cn.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_euc_cn.so '/lib/postgresql/utf8_and_euc_cn.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_cn'
 make -C utf8_and_euc_jp install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_euc_jp.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_euc_jp.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_euc_jp.so '/lib/postgresql/utf8_and_euc_jp.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_jp'
 make -C utf8_and_euc_kr install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_euc_kr.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_euc_kr.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_euc_kr.so '/lib/postgresql/utf8_and_euc_kr.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_kr'
 make -C utf8_and_euc_tw install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_euc_tw.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_euc_tw.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_euc_tw.so '/lib/postgresql/utf8_and_euc_tw.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc_tw'
 make -C utf8_and_gb18030 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_gb18030.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_gb18030.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_gb18030.so '/lib/postgresql/utf8_and_gb18030.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_gb18030'
 make -C utf8_and_gbk install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_gbk.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_gbk.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_gbk.so '/lib/postgresql/utf8_and_gbk.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_gbk'
 make -C utf8_and_iso8859 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_iso8859.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_iso8859.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_iso8859.so '/lib/postgresql/utf8_and_iso8859.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859'
 make -C utf8_and_iso8859_1 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_iso8859_1.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_iso8859_1.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_iso8859_1.so '/lib/postgresql/utf8_and_iso8859_1.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_iso8859_1'
 make -C utf8_and_johab install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_johab'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_johab.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_johab.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_johab.so '/lib/postgresql/utf8_and_johab.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_johab'
 make -C utf8_and_sjis install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_sjis.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_sjis.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_sjis.so '/lib/postgresql/utf8_and_sjis.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_sjis'
 make -C utf8_and_win install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_win'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_win.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_win.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_win.so '/lib/postgresql/utf8_and_win.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_win'
 make -C utf8_and_uhc install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_uhc.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_uhc.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_uhc.so '/lib/postgresql/utf8_and_uhc.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_uhc'
 make -C utf8_and_euc2004 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_euc2004.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_euc2004.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_euc2004.so '/lib/postgresql/utf8_and_euc2004.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_euc2004'
 make -C utf8_and_sjis2004 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  utf8_and_sjis2004.so '/home/saikiran/Postgresql/install/lib/postgresql/utf8_and_sjis2004.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  utf8_and_sjis2004.so '/lib/postgresql/utf8_and_sjis2004.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/utf8_and_sjis2004'
 make -C euc2004_sjis2004 install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  euc2004_sjis2004.so '/home/saikiran/Postgresql/install/lib/postgresql/euc2004_sjis2004.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  euc2004_sjis2004.so '/lib/postgresql/euc2004_sjis2004.so'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs/euc2004_sjis2004'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/utils/mb/conversion_procs'
 make -C backend/snowball install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/snowball'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql' '/home/saikiran/Postgresql/install/share/postgresql/tsearch_data'
-/usr/bin/install -c -m 755  dict_snowball.so '/home/saikiran/Postgresql/install/lib/postgresql/dict_snowball.so'
-/usr/bin/install -c -m 644 snowball_create.sql '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c -m 644 ./stopwords/danish.stop ./stopwords/dutch.stop ./stopwords/english.stop ./stopwords/finnish.stop ./stopwords/french.stop ./stopwords/german.stop ./stopwords/hungarian.stop ./stopwords/italian.stop ./stopwords/nepali.stop ./stopwords/norwegian.stop ./stopwords/portuguese.stop ./stopwords/russian.stop ./stopwords/spanish.stop ./stopwords/swedish.stop ./stopwords/turkish.stop '/home/saikiran/Postgresql/install/share/postgresql/tsearch_data'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/mkdir -p '/share/postgresql' '/share/postgresql/tsearch_data'
+/usr/bin/install -c -m 755  dict_snowball.so '/lib/postgresql/dict_snowball.so'
+/usr/bin/install -c -m 644 snowball_create.sql '/share/postgresql'
+/usr/bin/install -c -m 644 ./stopwords/danish.stop ./stopwords/dutch.stop ./stopwords/english.stop ./stopwords/finnish.stop ./stopwords/french.stop ./stopwords/german.stop ./stopwords/hungarian.stop ./stopwords/italian.stop ./stopwords/nepali.stop ./stopwords/norwegian.stop ./stopwords/portuguese.stop ./stopwords/russian.stop ./stopwords/spanish.stop ./stopwords/swedish.stop ./stopwords/turkish.stop '/share/postgresql/tsearch_data'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/snowball'
 make -C include install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/include'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/include/libpq' '/home/saikiran/Postgresql/install/include/postgresql/internal/libpq'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/include/postgresql/server'/access '/home/saikiran/Postgresql/install/include/postgresql/server'/archive '/home/saikiran/Postgresql/install/include/postgresql/server'/bootstrap '/home/saikiran/Postgresql/install/include/postgresql/server'/catalog '/home/saikiran/Postgresql/install/include/postgresql/server'/commands '/home/saikiran/Postgresql/install/include/postgresql/server'/common '/home/saikiran/Postgresql/install/include/postgresql/server'/datatype '/home/saikiran/Postgresql/install/include/postgresql/server'/executor '/home/saikiran/Postgresql/install/include/postgresql/server'/fe_utils '/home/saikiran/Postgresql/install/include/postgresql/server'/foreign '/home/saikiran/Postgresql/install/include/postgresql/server'/jit '/home/saikiran/Postgresql/install/include/postgresql/server'/lib '/home/saikiran/Postgresql/install/include/postgresql/server'/libpq '/home/saikiran/Postgresql/install/include/postgresql/server'/mb '/home/saikiran/Postgresql/install/include/postgresql/server'/nodes '/home/saikiran/Postgresql/install/include/postgresql/server'/optimizer '/home/saikiran/Postgresql/install/include/postgresql/server'/parser '/home/saikiran/Postgresql/install/include/postgresql/server'/partitioning '/home/saikiran/Postgresql/install/include/postgresql/server'/postmaster '/home/saikiran/Postgresql/install/include/postgresql/server'/regex '/home/saikiran/Postgresql/install/include/postgresql/server'/replication '/home/saikiran/Postgresql/install/include/postgresql/server'/rewrite '/home/saikiran/Postgresql/install/include/postgresql/server'/statistics '/home/saikiran/Postgresql/install/include/postgresql/server'/storage '/home/saikiran/Postgresql/install/include/postgresql/server'/tcop '/home/saikiran/Postgresql/install/include/postgresql/server'/snowball '/home/saikiran/Postgresql/install/include/postgresql/server'/snowball/libstemmer '/home/saikiran/Postgresql/install/include/postgresql/server'/tsearch '/home/saikiran/Postgresql/install/include/postgresql/server'/tsearch/dicts '/home/saikiran/Postgresql/install/include/postgresql/server'/utils '/home/saikiran/Postgresql/install/include/postgresql/server'/port '/home/saikiran/Postgresql/install/include/postgresql/server'/port/atomics '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32 '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32_msvc '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32_msvc/sys '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32/arpa '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32/netinet '/home/saikiran/Postgresql/install/include/postgresql/server'/port/win32/sys '/home/saikiran/Postgresql/install/include/postgresql/server'/portability
-/usr/bin/install -c -m 644 ./postgres_ext.h   '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 ./libpq/libpq-fs.h '/home/saikiran/Postgresql/install/include/libpq'
-/usr/bin/install -c -m 644 pg_config.h     '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 pg_config_ext.h '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 pg_config_os.h  '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 ./pg_config_manual.h '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 ./c.h            '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./port.h         '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./postgres_fe.h  '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./libpq/pqcomm.h '/home/saikiran/Postgresql/install/include/postgresql/internal/libpq'
-/usr/bin/install -c -m 644 pg_config.h     '/home/saikiran/Postgresql/install/include/postgresql/server'
-/usr/bin/install -c -m 644 pg_config_ext.h '/home/saikiran/Postgresql/install/include/postgresql/server'
-/usr/bin/install -c -m 644 pg_config_os.h  '/home/saikiran/Postgresql/install/include/postgresql/server'
-/usr/bin/install -c -m 644 nodes/nodetags.h '/home/saikiran/Postgresql/install/include/postgresql/server/nodes'
-/usr/bin/install -c -m 644 utils/errcodes.h '/home/saikiran/Postgresql/install/include/postgresql/server/utils'
-/usr/bin/install -c -m 644 utils/fmgroids.h '/home/saikiran/Postgresql/install/include/postgresql/server/utils'
-/usr/bin/install -c -m 644 utils/fmgrprotos.h '/home/saikiran/Postgresql/install/include/postgresql/server/utils'
-/usr/bin/install -c -m 644 ./*.h '/home/saikiran/Postgresql/install/include/postgresql/server'
+/usr/bin/mkdir -p '/include/libpq' '/include/postgresql/internal/libpq'
+/usr/bin/mkdir -p '/include/postgresql/server'/access '/include/postgresql/server'/archive '/include/postgresql/server'/bootstrap '/include/postgresql/server'/catalog '/include/postgresql/server'/commands '/include/postgresql/server'/common '/include/postgresql/server'/datatype '/include/postgresql/server'/executor '/include/postgresql/server'/fe_utils '/include/postgresql/server'/foreign '/include/postgresql/server'/jit '/include/postgresql/server'/lib '/include/postgresql/server'/libpq '/include/postgresql/server'/mb '/include/postgresql/server'/nodes '/include/postgresql/server'/optimizer '/include/postgresql/server'/parser '/include/postgresql/server'/partitioning '/include/postgresql/server'/postmaster '/include/postgresql/server'/regex '/include/postgresql/server'/replication '/include/postgresql/server'/rewrite '/include/postgresql/server'/statistics '/include/postgresql/server'/storage '/include/postgresql/server'/tcop '/include/postgresql/server'/snowball '/include/postgresql/server'/snowball/libstemmer '/include/postgresql/server'/tsearch '/include/postgresql/server'/tsearch/dicts '/include/postgresql/server'/utils '/include/postgresql/server'/port '/include/postgresql/server'/port/atomics '/include/postgresql/server'/port/win32 '/include/postgresql/server'/port/win32_msvc '/include/postgresql/server'/port/win32_msvc/sys '/include/postgresql/server'/port/win32/arpa '/include/postgresql/server'/port/win32/netinet '/include/postgresql/server'/port/win32/sys '/include/postgresql/server'/portability
+/usr/bin/install -c -m 644 ./postgres_ext.h   '/include'
+/usr/bin/install -c -m 644 ./libpq/libpq-fs.h '/include/libpq'
+/usr/bin/install -c -m 644 pg_config.h     '/include'
+/usr/bin/install -c -m 644 pg_config_ext.h '/include'
+/usr/bin/install -c -m 644 pg_config_os.h  '/include'
+/usr/bin/install -c -m 644 ./pg_config_manual.h '/include'
+/usr/bin/install -c -m 644 ./c.h            '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./port.h         '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./postgres_fe.h  '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./libpq/pqcomm.h '/include/postgresql/internal/libpq'
+/usr/bin/install -c -m 644 pg_config.h     '/include/postgresql/server'
+/usr/bin/install -c -m 644 pg_config_ext.h '/include/postgresql/server'
+/usr/bin/install -c -m 644 pg_config_os.h  '/include/postgresql/server'
+/usr/bin/install -c -m 644 nodes/nodetags.h '/include/postgresql/server/nodes'
+/usr/bin/install -c -m 644 utils/errcodes.h '/include/postgresql/server/utils'
+/usr/bin/install -c -m 644 utils/fmgroids.h '/include/postgresql/server/utils'
+/usr/bin/install -c -m 644 utils/fmgrprotos.h '/include/postgresql/server/utils'
+/usr/bin/install -c -m 644 ./*.h '/include/postgresql/server'
 for dir in access archive bootstrap catalog commands common datatype executor fe_utils foreign jit lib libpq mb nodes optimizer parser partitioning postmaster regex replication rewrite statistics storage tcop snowball snowball/libstemmer tsearch tsearch/dicts utils port port/atomics port/win32 port/win32_msvc port/win32_msvc/sys port/win32/arpa port/win32/netinet port/win32/sys portability; do \
-  /usr/bin/install -c -m 644 ./$dir/*.h '/home/saikiran/Postgresql/install/include/postgresql/server'/$dir || exit; \
+  /usr/bin/install -c -m 644 ./$dir/*.h '/include/postgresql/server'/$dir || exit; \
 done
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/include'
 make -C interfaces install
@@ -820,32 +820,32 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib' '/home/saikiran/Postgresql/install/lib/pkgconfig' 
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/include' '/home/saikiran/Postgresql/install/include/postgresql/internal' '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c -m 755  libpq.so.5.16 '/home/saikiran/Postgresql/install/lib/libpq.so.5.16'
-cd '/home/saikiran/Postgresql/install/lib' && \
+/usr/bin/mkdir -p '/lib' '/lib/pkgconfig' 
+/usr/bin/mkdir -p '/include' '/include/postgresql/internal' '/share/postgresql'
+/usr/bin/install -c -m 755  libpq.so.5.16 '/lib/libpq.so.5.16'
+cd '/lib' && \
 rm -f libpq.so.5 && \
 ln -s libpq.so.5.16 libpq.so.5
-cd '/home/saikiran/Postgresql/install/lib' && \
+cd '/lib' && \
 rm -f libpq.so && \
 ln -s libpq.so.5.16 libpq.so
-/usr/bin/install -c -m 644  libpq.a '/home/saikiran/Postgresql/install/lib/libpq.a'
-/usr/bin/install -c -m 644 libpq.pc '/home/saikiran/Postgresql/install/lib/pkgconfig/libpq.pc'
-/usr/bin/install -c -m 644 ./libpq-fe.h '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 ./libpq-events.h '/home/saikiran/Postgresql/install/include'
-/usr/bin/install -c -m 644 ./libpq-int.h '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./fe-auth-sasl.h '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./pqexpbuffer.h '/home/saikiran/Postgresql/install/include/postgresql/internal'
-/usr/bin/install -c -m 644 ./pg_service.conf.sample '/home/saikiran/Postgresql/install/share/postgresql/pg_service.conf.sample'
+/usr/bin/install -c -m 644  libpq.a '/lib/libpq.a'
+/usr/bin/install -c -m 644 libpq.pc '/lib/pkgconfig/libpq.pc'
+/usr/bin/install -c -m 644 ./libpq-fe.h '/include'
+/usr/bin/install -c -m 644 ./libpq-events.h '/include'
+/usr/bin/install -c -m 644 ./libpq-int.h '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./fe-auth-sasl.h '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./pqexpbuffer.h '/include/postgresql/internal'
+/usr/bin/install -c -m 644 ./pg_service.conf.sample '/share/postgresql/pg_service.conf.sample'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/libpq'
 make -C ecpg install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg'
 make -C include install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/include'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/include' '/home/saikiran/Postgresql/install/include/postgresql/informix/esql'
-/usr/bin/install -c -m 644 ./ecpgerrno.h ./ecpglib.h ./ecpgtype.h ./sqlca.h ./sql3types.h ./ecpg_informix.h ./pgtypes_error.h ./pgtypes_numeric.h ./pgtypes_timestamp.h ./pgtypes_date.h ./pgtypes_interval.h ./pgtypes.h ./sqlda.h ./sqlda-compat.h ./sqlda-native.h '/home/saikiran/Postgresql/install/include/'
-/usr/bin/install -c -m 644 ./datetime.h ./decimal.h ./sqltypes.h '/home/saikiran/Postgresql/install/include/postgresql/informix/esql/'
-/usr/bin/install -c -m 644 ../../../../src/interfaces/ecpg/include/ecpg_config.h '/home/saikiran/Postgresql/install/include'
+/usr/bin/mkdir -p '/include' '/include/postgresql/informix/esql'
+/usr/bin/install -c -m 644 ./ecpgerrno.h ./ecpglib.h ./ecpgtype.h ./sqlca.h ./sql3types.h ./ecpg_informix.h ./pgtypes_error.h ./pgtypes_numeric.h ./pgtypes_timestamp.h ./pgtypes_date.h ./pgtypes_interval.h ./pgtypes.h ./sqlda.h ./sqlda-compat.h ./sqlda-native.h '/include/'
+/usr/bin/install -c -m 644 ./datetime.h ./decimal.h ./sqltypes.h '/include/postgresql/informix/esql/'
+/usr/bin/install -c -m 644 ../../../../src/interfaces/ecpg/include/ecpg_config.h '/include'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/include'
 make -C pgtypeslib install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/pgtypeslib'
@@ -857,16 +857,16 @@ make -C ../../../../src/common all
 make[5]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[5]: Nothing to be done for 'all'.
 make[5]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib' '/home/saikiran/Postgresql/install/lib/pkgconfig' 
-/usr/bin/install -c -m 755  libpgtypes.so.3.16 '/home/saikiran/Postgresql/install/lib/libpgtypes.so.3.16'
-cd '/home/saikiran/Postgresql/install/lib' && \
+/usr/bin/mkdir -p '/lib' '/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libpgtypes.so.3.16 '/lib/libpgtypes.so.3.16'
+cd '/lib' && \
 rm -f libpgtypes.so.3 && \
 ln -s libpgtypes.so.3.16 libpgtypes.so.3
-cd '/home/saikiran/Postgresql/install/lib' && \
+cd '/lib' && \
 rm -f libpgtypes.so && \
 ln -s libpgtypes.so.3.16 libpgtypes.so
-/usr/bin/install -c -m 644  libpgtypes.a '/home/saikiran/Postgresql/install/lib/libpgtypes.a'
-/usr/bin/install -c -m 644 libpgtypes.pc '/home/saikiran/Postgresql/install/lib/pkgconfig/libpgtypes.pc'
+/usr/bin/install -c -m 644  libpgtypes.a '/lib/libpgtypes.a'
+/usr/bin/install -c -m 644 libpgtypes.pc '/lib/pkgconfig/libpgtypes.pc'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/pgtypeslib'
 make -C ecpglib install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/ecpglib'
@@ -892,16 +892,16 @@ make[6]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[6]: Nothing to be done for 'all'.
 make[6]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[5]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/pgtypeslib'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib' '/home/saikiran/Postgresql/install/lib/pkgconfig' 
-/usr/bin/install -c -m 755  libecpg.so.6.16 '/home/saikiran/Postgresql/install/lib/libecpg.so.6.16'
-cd '/home/saikiran/Postgresql/install/lib' && \
+/usr/bin/mkdir -p '/lib' '/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libecpg.so.6.16 '/lib/libecpg.so.6.16'
+cd '/lib' && \
 rm -f libecpg.so.6 && \
 ln -s libecpg.so.6.16 libecpg.so.6
-cd '/home/saikiran/Postgresql/install/lib' && \
+cd '/lib' && \
 rm -f libecpg.so && \
 ln -s libecpg.so.6.16 libecpg.so
-/usr/bin/install -c -m 644  libecpg.a '/home/saikiran/Postgresql/install/lib/libecpg.a'
-/usr/bin/install -c -m 644 libecpg.pc '/home/saikiran/Postgresql/install/lib/pkgconfig/libecpg.pc'
+/usr/bin/install -c -m 644  libecpg.a '/lib/libecpg.a'
+/usr/bin/install -c -m 644 libecpg.pc '/lib/pkgconfig/libecpg.pc'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/ecpglib'
 make -C compatlib install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/compatlib'
@@ -941,16 +941,16 @@ make[6]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[6]: Nothing to be done for 'all'.
 make[6]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[5]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/pgtypeslib'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib' '/home/saikiran/Postgresql/install/lib/pkgconfig' 
-/usr/bin/install -c -m 755  libecpg_compat.so.3.16 '/home/saikiran/Postgresql/install/lib/libecpg_compat.so.3.16'
-cd '/home/saikiran/Postgresql/install/lib' && \
+/usr/bin/mkdir -p '/lib' '/lib/pkgconfig' 
+/usr/bin/install -c -m 755  libecpg_compat.so.3.16 '/lib/libecpg_compat.so.3.16'
+cd '/lib' && \
 rm -f libecpg_compat.so.3 && \
 ln -s libecpg_compat.so.3.16 libecpg_compat.so.3
-cd '/home/saikiran/Postgresql/install/lib' && \
+cd '/lib' && \
 rm -f libecpg_compat.so && \
 ln -s libecpg_compat.so.3.16 libecpg_compat.so
-/usr/bin/install -c -m 644  libecpg_compat.a '/home/saikiran/Postgresql/install/lib/libecpg_compat.a'
-/usr/bin/install -c -m 644 libecpg_compat.pc '/home/saikiran/Postgresql/install/lib/pkgconfig/libecpg_compat.pc'
+/usr/bin/install -c -m 644  libecpg_compat.a '/lib/libecpg_compat.a'
+/usr/bin/install -c -m 644 libecpg_compat.pc '/lib/pkgconfig/libecpg_compat.pc'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/compatlib'
 make -C preproc install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/preproc'
@@ -962,8 +962,8 @@ make -C ../../../../src/common all
 make[5]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[5]: Nothing to be done for 'all'.
 make[5]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  ecpg '/home/saikiran/Postgresql/install/bin'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  ecpg '/bin'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg/preproc'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/ecpg'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces'
@@ -980,18 +980,18 @@ make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/interfaces/libpq'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  libpqwalreceiver.so '/home/saikiran/Postgresql/install/lib/postgresql/libpqwalreceiver.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  libpqwalreceiver.so '/lib/postgresql/libpqwalreceiver.so'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/replication/libpqwalreceiver'
 make -C backend/replication/pgoutput install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/backend/replication/pgoutput'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  pgoutput.so '/home/saikiran/Postgresql/install/lib/postgresql/pgoutput.so'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  pgoutput.so '/lib/postgresql/pgoutput.so'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/backend/replication/pgoutput'
 make -C fe_utils install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib'
-/usr/bin/install -c -m 644  libpgfeutils.a '/home/saikiran/Postgresql/install/lib/libpgfeutils.a'
+/usr/bin/mkdir -p '/lib'
+/usr/bin/install -c -m 644  libpgfeutils.a '/lib/libpgfeutils.a'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make -C bin install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin'
@@ -1028,8 +1028,8 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  initdb '/home/saikiran/Postgresql/install/bin/initdb'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  initdb '/bin/initdb'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/initdb'
 make -C pg_amcheck install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_amcheck'
@@ -1064,8 +1064,8 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_amcheck '/home/saikiran/Postgresql/install/bin/pg_amcheck'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_amcheck '/bin/pg_amcheck'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_amcheck'
 make -C pg_archivecleanup install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_archivecleanup'
@@ -1077,8 +1077,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_archivecleanup '/home/saikiran/Postgresql/install/bin/pg_archivecleanup'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_archivecleanup '/bin/pg_archivecleanup'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_archivecleanup'
 make -C pg_basebackup install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_basebackup'
@@ -1113,10 +1113,10 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_basebackup '/home/saikiran/Postgresql/install/bin/pg_basebackup'
-/usr/bin/install -c  pg_receivewal '/home/saikiran/Postgresql/install/bin/pg_receivewal'
-/usr/bin/install -c  pg_recvlogical '/home/saikiran/Postgresql/install/bin/pg_recvlogical'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_basebackup '/bin/pg_basebackup'
+/usr/bin/install -c  pg_receivewal '/bin/pg_receivewal'
+/usr/bin/install -c  pg_recvlogical '/bin/pg_recvlogical'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_basebackup'
 make -C pg_checksums install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_checksums'
@@ -1128,8 +1128,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_checksums '/home/saikiran/Postgresql/install/bin/pg_checksums'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_checksums '/bin/pg_checksums'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_checksums'
 make -C pg_config install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_config'
@@ -1141,8 +1141,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c -m 755 pg_config '/home/saikiran/Postgresql/install/bin/pg_config'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c -m 755 pg_config '/bin/pg_config'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_config'
 make -C pg_controldata install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_controldata'
@@ -1154,8 +1154,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_controldata '/home/saikiran/Postgresql/install/bin/pg_controldata'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_controldata '/bin/pg_controldata'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_controldata'
 make -C pg_ctl install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_ctl'
@@ -1167,8 +1167,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_ctl '/home/saikiran/Postgresql/install/bin/pg_ctl'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_ctl '/bin/pg_ctl'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_ctl'
 make -C pg_dump install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_dump'
@@ -1203,10 +1203,10 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_dump '/home/saikiran/Postgresql/install/bin'/pg_dump
-/usr/bin/install -c  pg_restore '/home/saikiran/Postgresql/install/bin'/pg_restore
-/usr/bin/install -c  pg_dumpall '/home/saikiran/Postgresql/install/bin'/pg_dumpall
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_dump '/bin'/pg_dump
+/usr/bin/install -c  pg_restore '/bin'/pg_restore
+/usr/bin/install -c  pg_dumpall '/bin'/pg_dumpall
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_dump'
 make -C pg_resetwal install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_resetwal'
@@ -1218,8 +1218,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_resetwal '/home/saikiran/Postgresql/install/bin/pg_resetwal'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_resetwal '/bin/pg_resetwal'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_resetwal'
 make -C pg_rewind install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_rewind'
@@ -1242,8 +1242,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_rewind '/home/saikiran/Postgresql/install/bin/pg_rewind'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_rewind '/bin/pg_rewind'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_rewind'
 make -C pg_test_fsync install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_test_fsync'
@@ -1255,8 +1255,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_test_fsync '/home/saikiran/Postgresql/install/bin/pg_test_fsync'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_test_fsync '/bin/pg_test_fsync'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_test_fsync'
 make -C pg_test_timing install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_test_timing'
@@ -1268,8 +1268,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_test_timing '/home/saikiran/Postgresql/install/bin/pg_test_timing'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_test_timing '/bin/pg_test_timing'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_test_timing'
 make -C pg_upgrade install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_upgrade'
@@ -1304,8 +1304,8 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_upgrade '/home/saikiran/Postgresql/install/bin/pg_upgrade'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_upgrade '/bin/pg_upgrade'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_upgrade'
 make -C pg_verifybackup install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_verifybackup'
@@ -1340,8 +1340,8 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_verifybackup '/home/saikiran/Postgresql/install/bin/pg_verifybackup'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_verifybackup '/bin/pg_verifybackup'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_verifybackup'
 make -C pg_waldump install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_waldump'
@@ -1353,8 +1353,8 @@ make -C ../../../src/common all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pg_waldump '/home/saikiran/Postgresql/install/bin/pg_waldump'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pg_waldump '/bin/pg_waldump'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pg_waldump'
 make -C pgbench install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/pgbench'
@@ -1389,8 +1389,8 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  pgbench '/home/saikiran/Postgresql/install/bin/pgbench'
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  pgbench '/bin/pgbench'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/pgbench'
 make -C psql install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/psql'
@@ -1425,9 +1425,9 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin' '/home/saikiran/Postgresql/install/share/postgresql'
-/usr/bin/install -c  psql '/home/saikiran/Postgresql/install/bin/psql'
-/usr/bin/install -c -m 644 ./psqlrc.sample '/home/saikiran/Postgresql/install/share/postgresql/psqlrc.sample'
+/usr/bin/mkdir -p '/bin' '/share/postgresql'
+/usr/bin/install -c  psql '/bin/psql'
+/usr/bin/install -c -m 644 ./psqlrc.sample '/share/postgresql/psqlrc.sample'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/psql'
 make -C scripts install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/bin/scripts'
@@ -1462,15 +1462,15 @@ make -C ../../../src/fe_utils all
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
 make[4]: Nothing to be done for 'all'.
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/fe_utils'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/bin'
-/usr/bin/install -c  createdb   '/home/saikiran/Postgresql/install/bin'/createdb
-/usr/bin/install -c  dropdb     '/home/saikiran/Postgresql/install/bin'/dropdb
-/usr/bin/install -c  createuser '/home/saikiran/Postgresql/install/bin'/createuser
-/usr/bin/install -c  dropuser   '/home/saikiran/Postgresql/install/bin'/dropuser
-/usr/bin/install -c  clusterdb  '/home/saikiran/Postgresql/install/bin'/clusterdb
-/usr/bin/install -c  vacuumdb   '/home/saikiran/Postgresql/install/bin'/vacuumdb
-/usr/bin/install -c  reindexdb  '/home/saikiran/Postgresql/install/bin'/reindexdb
-/usr/bin/install -c  pg_isready '/home/saikiran/Postgresql/install/bin'/pg_isready
+/usr/bin/mkdir -p '/bin'
+/usr/bin/install -c  createdb   '/bin'/createdb
+/usr/bin/install -c  dropdb     '/bin'/dropdb
+/usr/bin/install -c  createuser '/bin'/createuser
+/usr/bin/install -c  dropuser   '/bin'/dropuser
+/usr/bin/install -c  clusterdb  '/bin'/clusterdb
+/usr/bin/install -c  vacuumdb   '/bin'/vacuumdb
+/usr/bin/install -c  reindexdb  '/bin'/reindexdb
+/usr/bin/install -c  pg_isready '/bin'/pg_isready
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin/scripts'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/bin'
 make -C pl install
@@ -1479,19 +1479,19 @@ make -C plpgsql install
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/pl/plpgsql'
 make -C src install
 make[4]: Entering directory '/home/saikiran/Postgresql/postgresql/src/pl/plpgsql/src'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql'
-/usr/bin/install -c -m 755  plpgsql.so '/home/saikiran/Postgresql/install/lib/postgresql/plpgsql.so'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/share/postgresql/extension'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/include/postgresql/server'
-/usr/bin/install -c -m 644 ./plpgsql.control ./plpgsql--1.0.sql '/home/saikiran/Postgresql/install/share/postgresql/extension/'
-/usr/bin/install -c -m 644 './plpgsql.h' '/home/saikiran/Postgresql/install/include/postgresql/server'
+/usr/bin/mkdir -p '/lib/postgresql'
+/usr/bin/install -c -m 755  plpgsql.so '/lib/postgresql/plpgsql.so'
+/usr/bin/mkdir -p '/share/postgresql/extension'
+/usr/bin/mkdir -p '/include/postgresql/server'
+/usr/bin/install -c -m 644 ./plpgsql.control ./plpgsql--1.0.sql '/share/postgresql/extension/'
+/usr/bin/install -c -m 644 './plpgsql.h' '/include/postgresql/server'
 make[4]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/pl/plpgsql/src'
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/pl/plpgsql'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/pl'
 make -C makefiles install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/makefiles'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/makefiles'
-/usr/bin/install -c -m 644 ./pgxs.mk '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/makefiles/'
+/usr/bin/mkdir -p '/lib/postgresql/pgxs/src/makefiles'
+/usr/bin/install -c -m 644 ./pgxs.mk '/lib/postgresql/pgxs/src/makefiles/'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/makefiles'
 make -C test/regress install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/test/regress'
@@ -1507,8 +1507,8 @@ make -C ../../../contrib/spi
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/contrib/spi'
 make[3]: Nothing to be done for 'all'.
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/contrib/spi'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/test/regress'
-/usr/bin/install -c  pg_regress '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/test/regress/pg_regress'
+/usr/bin/mkdir -p '/lib/postgresql/pgxs/src/test/regress'
+/usr/bin/install -c  pg_regress '/lib/postgresql/pgxs/src/test/regress/pg_regress'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/test/regress'
 make -C test/isolation install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/test/isolation'
@@ -1531,23 +1531,23 @@ make -C ../../../src/common all
 make[3]: Entering directory '/home/saikiran/Postgresql/postgresql/src/common'
 make[3]: Nothing to be done for 'all'.
 make[3]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/common'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/test/isolation'
-/usr/bin/install -c  pg_isolation_regress '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/test/isolation/pg_isolation_regress'
-/usr/bin/install -c  isolationtester '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/test/isolation/isolationtester'
+/usr/bin/mkdir -p '/lib/postgresql/pgxs/src/test/isolation'
+/usr/bin/install -c  pg_isolation_regress '/lib/postgresql/pgxs/src/test/isolation/pg_isolation_regress'
+/usr/bin/install -c  isolationtester '/lib/postgresql/pgxs/src/test/isolation/isolationtester'
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/test/isolation'
 make -C test/perl install
 make[2]: Entering directory '/home/saikiran/Postgresql/postgresql/src/test/perl'
 make[2]: Nothing to be done for 'install'.
 make[2]: Leaving directory '/home/saikiran/Postgresql/postgresql/src/test/perl'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src'
-/usr/bin/install -c -m 644 Makefile.global '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/Makefile.global'
-/usr/bin/install -c -m 644 Makefile.port '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/Makefile.port'
-/usr/bin/install -c -m 644 ./Makefile.shlib '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/Makefile.shlib'
-/usr/bin/install -c -m 644 ./nls-global.mk '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/src/nls-global.mk'
+/usr/bin/mkdir -p '/lib/postgresql/pgxs/src'
+/usr/bin/install -c -m 644 Makefile.global '/lib/postgresql/pgxs/src/Makefile.global'
+/usr/bin/install -c -m 644 Makefile.port '/lib/postgresql/pgxs/src/Makefile.port'
+/usr/bin/install -c -m 644 ./Makefile.shlib '/lib/postgresql/pgxs/src/Makefile.shlib'
+/usr/bin/install -c -m 644 ./nls-global.mk '/lib/postgresql/pgxs/src/nls-global.mk'
 make[1]: Leaving directory '/home/saikiran/Postgresql/postgresql/src'
 make -C config install
 make[1]: Entering directory '/home/saikiran/Postgresql/postgresql/config'
-/usr/bin/mkdir -p '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/config'
-/usr/bin/install -c -m 755 ./install-sh '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/config/install-sh'
-/usr/bin/install -c -m 755 ./missing '/home/saikiran/Postgresql/install/lib/postgresql/pgxs/config/missing'
+/usr/bin/mkdir -p '/lib/postgresql/pgxs/config'
+/usr/bin/install -c -m 755 ./install-sh '/lib/postgresql/pgxs/config/install-sh'
+/usr/bin/install -c -m 755 ./missing '/lib/postgresql/pgxs/config/missing'
 make[1]: Leaving directory '/home/saikiran/Postgresql/postgresql/config'
