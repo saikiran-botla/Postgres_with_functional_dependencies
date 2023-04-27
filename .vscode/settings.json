@@ -1,0 +1,8 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "*.l": "lex",
+        "postgres.h": "c",
+        "fd.h": "c"
+    }
+}
